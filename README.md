@@ -24,6 +24,19 @@ The skill covers:
 - Framework flag injection (Vite, VitePlus, Astro, React Router, Angular, Expo, React Native), `--strictPort`, the 508 loop fix, and the 502 cases portless cannot rewrite.
 - Environment variables, verification ladder (`list`/`doctor`/`prune`/`trust`/`hosts sync`), and platform notes for Windows, macOS, Linux, WSL, and custom TLDs.
 
+### Try it in 60 seconds
+
+With portless installed (`npm install -g portless`), serve this repo's example folder through a named HTTPS URL:
+
+```bash
+git clone https://github.com/bbylw/portless-skill
+cd portless-skill/examples/static-site
+portless demo npx -y serve .
+# -> open https://demo.localhost
+```
+
+You should see the page with no certificate warning. Press `Ctrl+C` to stop; the route cleans up automatically. More in [`examples/static-site`](examples/static-site).
+
 ### Install for your agent
 
 Point your agent tool at this repo and it will pick up the skill automatically (project-level `.agents/skills`). To make it available machine-wide:
@@ -84,6 +97,19 @@ MIT
 - 零配置用法（`portless` → 运行 `"dev"` 脚本）、命名运行、子域名、git worktree、monorepo、静态站点（`npx serve`），以及面向 Docker/外部服务的 `alias` 路由。
 - 框架参数注入（Vite、VitePlus、Astro、React Router、Angular、Expo、React Native）、`--strictPort`、508 循环修复、以及 portless 无法改写而返回 502 的场景。
 - 环境变量、诊断阶梯（`list`/`doctor`/`prune`/`trust`/`hosts sync`）、以及 Windows、macOS、Linux、WSL 与自定义 TLD 的平台注意事项。
+
+### 60 秒上手
+
+装好 portless 后（`npm install -g portless`），把本仓库的示例目录跑成一个有名字的 HTTPS URL：
+
+```bash
+git clone https://github.com/bbylw/portless-skill
+cd portless-skill/examples/static-site
+portless demo npx -y serve .
+# -> 打开 https://demo.localhost
+```
+
+页面应正常显示且无证书告警。按 `Ctrl+C` 停止，路由自动清理。详见 [`examples/static-site`](examples/static-site)。
 
 ### 安装到你的 AI 代理
 
