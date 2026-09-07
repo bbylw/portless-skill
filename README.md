@@ -4,6 +4,8 @@ An open, cross-platform **agent skill** for working with [portless](https://gith
 
 It teaches AI coding agents (and humans) how to run dev servers and static previews through portless, what flags it injects per framework, and how to diagnose routing/HTTPS problems — verified against the real CLI on Windows, macOS, and Linux.
 
+This is a community, **workflow-focused** take: it keeps what an agent actually runs day to day and stays lean. For the canonical, full reference (CLI tables, `service`, Tailscale/ngrok, config fields, `oauth`), use the official skills in the [portless repository](https://github.com/vercel-labs/portless/tree/main/skills).
+
 > **中文版本见下方** — English first, 中文在下。
 
 ---
@@ -45,6 +47,17 @@ The skill is just instructions; the tool itself is required on the machine that 
 npm install -g portless   # Node.js 24+
 portless doctor           # read-only health check
 ```
+
+Behavior notes assume **portless ≥ 0.15**.
+
+### Relationship to the official skills
+
+The [upstream portless repo](https://github.com/vercel-labs/portless/tree/main/skills) ships its own skills — a full `portless` reference and an `oauth` companion — and they are the canonical source. This repo is intentionally different:
+
+- **Bilingual** — English and Chinese; upstream is English-only.
+- **Workflow-focused, not a manual** — covers the daily agent flow (zero-config, named runs, static sites, monorepos, framework injection, diagnostics) and stays lean. For the exhaustive reference (every command, `service install`, Tailscale/ngrok, `--wildcard`, config fields, OAuth setup), see the official skills.
+
+Install one or the other — they share the same skill name (`portless`) and would conflict if both are loaded.
 
 ### License
 
@@ -95,6 +108,17 @@ npx skills add <owner>/<repo> --skill portless --yes
 npm install -g portless   # 需要 Node.js 24+
 portless doctor           # 只读健康检查
 ```
+
+行为说明假设 **portless ≥ 0.15**。
+
+### 与官方技能的关系
+
+[上游 portless 仓库](https://github.com/vercel-labs/portless/tree/main/skills)自带技能——完整的 `portless` 参考版和一个 `oauth` 配套技能——它们才是权威来源。本仓库刻意与之不同：
+
+- **中英双语**——上游只有英文。
+- **面向工作流而非手册**——聚焦日常 agent 流程（零配置、命名运行、静态站点、monorepo、框架注入、诊断），保持精简。需要完整参考（全部命令、`service install`、Tailscale/ngrok、`--wildcard`、配置字段、OAuth 配置）时，请看官方技能。
+
+两者安装其一即可——它们共用同一个技能名（`portless`），同时加载会冲突。
 
 ### 许可证
 
